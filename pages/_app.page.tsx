@@ -37,6 +37,7 @@ import { PermissionProvider } from 'src/hooks/usePermissions';
 import AaveMetaImage from 'public/aaveMetaLogo.png';
 import { FaucetModal } from 'src/components/transactions/Faucet/FaucetModal';
 import { AddressBlocked } from 'src/components/AddressBlocked';
+import { OnRampModal } from '../src/components/transactions/OnRamp/OnRampModal';
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -89,6 +90,7 @@ export default function MyApp(props: MyAppProps) {
                                   <GasStationProvider>
                                     {getLayout(<Component {...pageProps} />)}
                                     <SupplyModal />
+                                    <OnRampModal />
                                     <WithdrawModal />
                                     <BorrowModal />
                                     <RepayModal />

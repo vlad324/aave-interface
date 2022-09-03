@@ -33,7 +33,7 @@ export const SupplyAssetsListItem = ({
   detailsAddress,
 }: SupplyAssetsItem) => {
   const { currentMarket } = useProtocolDataContext();
-  const { openSupply } = useModalContext();
+  const { openSupply, openOnRamp } = useModalContext();
 
   // Hide the asset to prevent it from being supplied if supply cap has been reached
   const { supplyCap: supplyCapUsage, debtCeiling } = useAssetCaps();
@@ -79,13 +79,23 @@ export const SupplyAssetsListItem = ({
       </ListColumn>
 
       <ListButtonsColumn>
-        <Button
-          disabled={!isActive || isFreezed || Number(walletBalance) <= 0}
-          variant="contained"
-          onClick={() => openSupply(underlyingAsset)}
-        >
-          <Trans>Supply</Trans>
-        </Button>
+        {Number(walletBalance) <= 0.01 ? (
+          <Button
+            disabled={!isActive || isFreezed}
+            variant="contained"
+            onClick={() => openOnRamp(underlyingAsset)}
+          >
+            <Trans>Supply</Trans>
+          </Button>
+        ) : (
+          <Button
+            disabled={!isActive || isFreezed || Number(walletBalance) <= 0}
+            variant="contained"
+            onClick={() => openSupply(underlyingAsset)}
+          >
+            <Trans>Supply</Trans>
+          </Button>
+        )}
         <Button
           variant="outlined"
           component={Link}

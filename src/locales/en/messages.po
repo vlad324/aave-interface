@@ -380,6 +380,7 @@ msgstr "Can be executed"
 msgid "Cannot disable E-Mode"
 msgstr "Cannot disable E-Mode"
 
+#: src/components/transactions/OnRamp/OnRampModalContent.tsx
 #: src/components/transactions/Supply/SupplyModalContent.tsx
 msgid "Cap reached. Lower supply amount"
 msgstr "Cap reached. Lower supply amount"
@@ -1100,6 +1101,10 @@ msgstr "Ok, Close"
 msgid "Ok, I got it"
 msgstr "Ok, I got it"
 
+#: src/components/transactions/OnRamp/OnRampModal.tsx
+msgid "On-ramp"
+msgstr "On-ramp"
+
 #: src/ui-config/errorMapping.tsx
 msgid "Operation not supported"
 msgstr "Operation not supported"
@@ -1442,6 +1447,7 @@ msgstr "Started"
 msgid "State"
 msgstr "State"
 
+#: src/components/transactions/OnRamp/OnRampModalContent.tsx
 #: src/components/transactions/Supply/SupplyModalContent.tsx
 msgid "Supplied"
 msgstr "Supplied"
@@ -1450,6 +1456,7 @@ msgstr "Supplied"
 #: src/components/transactions/Supply/SupplyModal.tsx
 #: src/modules/dashboard/lists/SuppliedPositionsList/SuppliedPositionsListItem.tsx
 #: src/modules/dashboard/lists/SuppliedPositionsList/SuppliedPositionsListMobileItem.tsx
+#: src/modules/dashboard/lists/SupplyAssetsList/SupplyAssetsListItem.tsx
 #: src/modules/dashboard/lists/SupplyAssetsList/SupplyAssetsListItem.tsx
 #: src/modules/dashboard/lists/SupplyAssetsList/SupplyAssetsListMobileItem.tsx
 #: src/modules/reserve-overview/ReserveActions.tsx

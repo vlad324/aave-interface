@@ -21,6 +21,7 @@ export enum ModalType {
   Swap,
   GovDelegation,
   GovVote,
+  OnRamp,
 }
 
 export interface ModalArgsType {
@@ -43,6 +44,7 @@ export type TxStateType = {
 
 export interface ModalContextType<T extends ModalArgsType> {
   openSupply: (underlyingAsset: string) => void;
+  openOnRamp: (underlyingAsset: string) => void;
   openWithdraw: (underlyingAsset: string) => void;
   openBorrow: (underlyingAsset: string) => void;
   openRepay: (underlyingAsset: string, currentRateMode: InterestRate) => void;
@@ -97,6 +99,10 @@ export const ModalContextProvider: React.FC = ({ children }) => {
       value={{
         openSupply: (underlyingAsset) => {
           setType(ModalType.Supply);
+          setArgs({ underlyingAsset });
+        },
+        openOnRamp: (underlyingAsset) => {
+          setType(ModalType.OnRamp);
           setArgs({ underlyingAsset });
         },
         openWithdraw: (underlyingAsset) => {
